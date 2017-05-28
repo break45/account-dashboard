@@ -2,8 +2,14 @@
 
 A Polymer2 / PWA project
 
-TBD
+to get started:
 
+1) install bower
+2) install polymer-cli
+3) do a "bower install"
+4) execute "polymer serve --open"
+
+have fun!
 
 --
 based on the Polymer App Toolbox - Starter Kit
