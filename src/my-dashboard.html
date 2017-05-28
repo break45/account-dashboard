@@ -10,6 +10,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/vaadin-board/vaadin-board.html">
+<link rel="import" href="../bower_components/vaadin-grid/all-imports.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-dashboard">
@@ -34,6 +36,60 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           height:100px;
       }
     </style>
+
+    <vaadin-grid items='
+          [{"account": "GAP", "title": "Polymer 2 borken", "status": "waiting for estimate approval", "updated": "today"},
+          {"account": "Adibas", "title": "Upgrade woes", "status": "new", "updated": "yesterday"},
+          {"account": "Coca-Cola", "title": "Grid borken again", "status": "waiting for estimate approval", "updated": "5 days"},
+          {"account": "Pepsi", "title": "Too much cash", "status": "waiting for details", "updated": "3 days"},
+          {"account": "GAP", "title": "Too many hours to spend", "status": "new", "updated": "weeks and weeks"},
+          {"account": "Coca-Cola", "title": "Grid borken again", "status": "waiting for estimate approval", "updated": "5 days"},
+          {"account": "Pepsi", "title": "Too much cash", "status": "waiting for details", "updated": "3 days"},
+          {"account": "GAP", "title": "Too many hours to spend", "status": "new", "updated": "weeks and weeks"},
+          {"account": "Coca-Cola", "title": "Grid borken again", "status": "waiting for estimate approval", "updated": "5 days"},
+          {"account": "Pepsi", "title": "Too much cash", "status": "waiting for details", "updated": "3 days"},
+          {"account": "GAP", "title": "Too many hours to spend", "status": "new", "updated": "weeks and weeks"},
+          {"account": "Coca-Cola", "title": "Grid borken again", "status": "waiting for estimate approval", "updated": "5 days"},
+          {"account": "Pepsi", "title": "Too much cash", "status": "waiting for details", "updated": "3 days"},
+          {"account": "GAP", "title": "Too many hours to spend", "status": "new", "updated": "weeks and weeks"},
+          {"account": "Coca-Cola", "title": "You rock!", "status": "estimate approved", "updated": "tomorrow"}]
+          '>
+      <template class="row-details">
+        <div class="details">
+          <p>Hello John,<br/>
+We use the Java EE-CDI framework.<br/>
+Yes, we want the jobs to be persistent so we can see status as you described (ie see status of email if server goes down).<br/>
+If you are refereeing to a 'live' demo, that's fine. Instructions on how to use it will be fine for now.<br/>
+<br/>
+Thanks<br/>
+<br/>
+Becky</p>
+        </div>
+      </template>
+
+      <vaadin-grid-column>
+        <template class="header">Account</template>
+        <template>[[item.account]]</template>
+      </vaadin-grid-column>
+      <vaadin-grid-column>
+        <template class="header">Title</template>
+        <template>[[item.title]]</template>
+      </vaadin-grid-column>
+      <vaadin-grid-column width="100px">
+        <template class="header"></template>
+        <template>
+          <paper-checkbox aria-label$="Details" checked="{{expanded}}">Details</paper-checkbox>
+        </template>
+      </vaadin-grid-column>
+      <vaadin-grid-column>
+        <template class="header">Status</template>
+        <template>[[item.status]]</template>
+      </vaadin-grid-column>
+      <vaadin-grid-column>
+        <template class="header">Latest Update</template>
+        <template>[[item.updated]]</template>
+      </vaadin-grid-column>
+    </vaadin-grid>
 
     <vaadin-board>
       <vaadin-board-row>

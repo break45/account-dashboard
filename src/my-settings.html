@@ -9,6 +9,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-settings">
@@ -22,10 +26,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <div class="card">
-      <div class="circle">2</div>
-      <h1>Settings</h1>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
-      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
+      <h1>Account selection</h1>
+      <p>Select which Customer accounts to show on dashboard:</p>
+      <p><paper-checkbox>Gap Inc</paper-checkbox></p>
+      <p><paper-checkbox checked>Canon</paper-checkbox></p>
+      <p><paper-checkbox>Coca-Cola</paper-checkbox></p>
+      <p><paper-checkbox checked>Pizza Hut</paper-checkbox></p>
+      <p><paper-checkbox>Louis Vuitton</paper-checkbox></p>
+      <p><paper-button raised>Refresh</paper-button></p>
+    </div>
+    <div class="card">
+      <h1>Hubspot credentials</h1>
+      <p><paper-input label="E-mail address" value="olli.murto@vaadin.com"></paper-input></p>
+      <p><paper-input label="Password"></paper-input></p>
+      <p><paper-button raised class="green">Connect to Hubspot</paper-button></p>
     </div>
   </template>
 
