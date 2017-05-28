@@ -19,7 +19,8 @@
     "paper-checkbox": "PolymerElements/paper-checkbox#^2.0.0",
     "paper-button": "PolymerElements/paper-button#^2.0.0",
     "paper-input": "PolymerElements/paper-input#^2.0.0",
-    "vaadin-grid": "v3.0.0-alpha1"
+    "vaadin-grid": "v3.0.0-alpha1",
+    "vaadin-charts": "^4.0.0"
   },
   "resolutions": {
     "polymer": "^2.0.0-rc.3"
