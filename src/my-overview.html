@@ -9,6 +9,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-toggle-button/paper-toggle-button.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/vaadin-grid/all-imports.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+
+
+
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-overview">
@@ -19,14 +28,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         padding: 10px;
       }
+      .iron-selected {
+        color: #00B4F0;
+        font-weight: 200;
+      }
+      .green {
+        height: 35px;
+      }
     </style>
 
-    <!-- <div class="card">
-      <div class="circle">3</div>
-      <h1>View Three</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-    </div> -->
+    <div class="card">
+      <h1>My Subscriptions</h1>
+      <p>Below is a list of all subscriptions you manage.</p>
+      <paper-toggle-button>Show all subscriptions</paper-toggle-button>
+      <table>
+        <tr>
+          <td><paper-input label="Search for a subscription:" value="Adibas"></paper-input></td>
+          <td><paper-button raised class="green">Search</paper-button></td>
+        </tr>
+      </table>
+    </div>
 
     <vaadin-grid items='
           [{"account": "GAP", "service": "Prime", "status": "Red", "expires": "2017-11-17", "contacted": "today"},
@@ -52,11 +73,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </template>
 
       <vaadin-grid-column>
-        <template class="header">Account</template>
+        <template class="header">Subscription</template>
         <template>[[item.account]]</template>
       </vaadin-grid-column>
       <vaadin-grid-column>
-        <template class="header">Service</template>
+        <template class="header">Product</template>
         <template>[[item.service]]</template>
       </vaadin-grid-column>
       <vaadin-grid-column>
